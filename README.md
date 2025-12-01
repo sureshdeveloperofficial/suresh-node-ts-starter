@@ -23,6 +23,20 @@ A modern, production-ready Node.js server setup with **decorator-based architect
 
 ## Installation
 
+### Option 1: Scaffold a new project (recommended)
+
+Use the CLI to create a fresh project in a new folder:
+
+```bash
+npx suresh-node-ts-starter my-new-app
+cd my-new-app
+npm install
+```
+
+Then follow the `.env` and database setup steps shown below.
+
+### Option 2: Clone this repository
+
 1. Clone the repository:
 ```bash
 git clone <your-repo-url>
