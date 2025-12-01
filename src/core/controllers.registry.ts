@@ -1,4 +1,4 @@
-import express, { Express, Router } from 'express';
+import express, { Express } from 'express';
 import { RouterRegistry } from './router';
 import {
   HomeController,
@@ -22,12 +22,12 @@ export function registerControllers(app: Express): void {
   routerRegistry.registerController(HealthController);
   routerRegistry.registerController(ApiController);
 
-  // Register API controllers with prefix
-  const apiRouter: Router = express.Router();
-  const apiRegistry = new RouterRegistry(apiRouter);
+  // Register API controllers under a nested Express app to satisfy type constraints
+  const apiApp = express() as Express;
+  const apiRegistry = new RouterRegistry(apiApp);
   apiRegistry.registerController(AuthController);
   apiRegistry.registerController(UserController);
   apiRegistry.registerController(PermissionController);
-  app.use(config.apiPrefix, apiRouter);
+  app.use(config.apiPrefix, apiApp);
 }
 

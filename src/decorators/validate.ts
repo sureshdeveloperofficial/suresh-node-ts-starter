@@ -8,7 +8,7 @@ export const VALIDATE_METADATA_KEY = Symbol('validate');
  * Validation decorator - applies Joi validation to route handlers
  */
 export function Validate(schema: ValidationSchema) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (target: any, propertyKey: string, _descriptor: PropertyDescriptor) {
     const validationMiddleware = validate(schema);
     
     // Store validation middleware in metadata

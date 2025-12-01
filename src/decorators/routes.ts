@@ -7,7 +7,7 @@ import { ROUTE_METADATA_KEY, RouteMetadata } from './controller';
  */
 function createRouteDecorator(method: 'get' | 'post' | 'put' | 'delete' | 'patch') {
   return function (path: string = '', ...middlewares: RequestHandler[]) {
-    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    return function (target: any, propertyKey: string, _descriptor: PropertyDescriptor) {
       const routes: RouteMetadata[] =
         Reflect.getMetadata(ROUTE_METADATA_KEY, target.constructor) || [];
 

@@ -11,7 +11,7 @@ export const ROLES_METADATA_KEY = Symbol('roles');
  * Can be used at class or method level
  */
 export function Auth() {
-  return function (target: any, propertyKey?: string, descriptor?: PropertyDescriptor) {
+  return function (target: any, propertyKey?: string, _descriptor?: PropertyDescriptor) {
     if (propertyKey) {
       // Method-level
       const existing: RequestHandler[] =
@@ -36,7 +36,7 @@ export function Auth() {
  * @param roles - Array of allowed roles
  */
 export function Roles(...roles: string[]) {
-  return function (target: any, propertyKey?: string, descriptor?: PropertyDescriptor) {
+  return function (target: any, propertyKey?: string, _descriptor?: PropertyDescriptor) {
     const authMiddleware = authorize(...roles);
     if (propertyKey) {
       // Method-level

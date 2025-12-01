@@ -6,7 +6,7 @@ import { MIDDLEWARE_METADATA_KEY } from './controller';
  * Use middleware decorator - applies middleware to controller methods
  */
 export function Use(...middlewares: RequestHandler[]) {
-  return function (target: any, propertyKey?: string, descriptor?: PropertyDescriptor) {
+  return function (target: any, propertyKey?: string, _descriptor?: PropertyDescriptor) {
     if (propertyKey) {
       // Method-level middleware
       const existing = Reflect.getMetadata(MIDDLEWARE_METADATA_KEY, target, propertyKey) || [];

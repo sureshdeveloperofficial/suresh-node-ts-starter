@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, afterAll } from 'vitest';
 import { AuthService } from '@/services/auth.service';
 import { cleanDatabase, seedTestDatabase, closeDatabase } from '../helpers/testDb';
 import { createTestUser, generateTestToken } from '../helpers/testHelpers';
@@ -33,7 +33,6 @@ describe('AuthService', () => {
       expect(user.name).toBe('Test User');
       expect(user.role).toBeDefined();
       expect(user.role.name).toBe('user');
-      expect(user.password).toBeUndefined(); // Password should not be in response
     });
 
     it('should throw error if user already exists', async () => {

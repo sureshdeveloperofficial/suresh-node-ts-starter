@@ -21,7 +21,7 @@ export function Permission(
   requirements: PermissionRequirement | PermissionRequirement[],
   options?: { requireAll?: boolean }
 ) {
-  return function (target: any, propertyKey?: string, descriptor?: PropertyDescriptor) {
+  return function (target: any, propertyKey?: string, _descriptor?: PropertyDescriptor) {
     const permissions = Array.isArray(requirements) ? requirements : [requirements];
     const requireAll = options?.requireAll ?? false;
 

@@ -29,7 +29,7 @@ export class PermissionController {
    */
   @Get('/')
   @Permission({ resource: 'settings', action: 'read' }) // Only admins can view all permissions
-  async getAllPermissions(@Query() query: any, @Res() res: Response) {
+  async getAllPermissions(@Query() _query: any, @Res() res: Response) {
     try {
       // Get all modules
       const modules = await PermissionService.getAllModules();

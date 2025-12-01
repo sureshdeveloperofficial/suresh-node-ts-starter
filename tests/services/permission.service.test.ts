@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, afterAll } from 'vitest';
-import { PermissionService, SUPER_ADMIN_ROLE } from '@/services/permission.service';
+import { PermissionService } from '@/services/permission.service';
 import { cleanDatabase, seedTestDatabase, closeDatabase } from '../helpers/testDb';
 import { createTestUser } from '../helpers/testHelpers';
 

@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import { Request, Response } from 'express';
 import { PARAM_METADATA_KEY, ParamMetadata } from './controller';
 
 /**

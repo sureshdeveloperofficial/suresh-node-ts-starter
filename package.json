@@ -1,8 +1,22 @@
 {
   "name": "suresh-node-ts-starter",
-  "version": "1.0.0",
-  "description": "A modern Node.js TypeScript server starter template",
+  "version": "1.0.1",
+  "description": "A modern, production-ready Node.js TypeScript server starter template with decorator-based architecture, Express, Prisma, PostgreSQL, JWT authentication, Redis, and comprehensive testing setup.",
   "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "bin": {
+    "suresh-node-ts-starter": "./bin/create.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "src",
+    "prisma",
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "tsconfig.json"
+  ],
   "scripts": {
     "dev": "nodemon",
     "dev:tsx": "tsx watch src/server.ts",
@@ -10,6 +24,7 @@
     "start": "node dist/server.js",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
@@ -25,10 +40,33 @@
     "nodejs",
     "typescript",
     "express",
-    "server"
+    "server",
+    "starter",
+    "template",
+    "boilerplate",
+    "prisma",
+    "postgresql",
+    "jwt",
+    "authentication",
+    "redis",
+    "decorator",
+    "rest-api",
+    "api-server",
+    "backend",
+    "typescript-server",
+    "node-starter",
+    "express-typescript"
   ],
-  "author": "",
+  "author": "sureshdeveloperofficial <sureshdeveloperofficial@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sureshdeveloperofficial/suresh-node-ts-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sureshdeveloperofficial/suresh-node-ts-starter/issues"
+  },
+  "homepage": "https://github.com/sureshdeveloperofficial/suresh-node-ts-starter#readme",
   "dependencies": {
     "@prisma/client": "^5.7.1",
     "bcrypt": "^6.0.0",

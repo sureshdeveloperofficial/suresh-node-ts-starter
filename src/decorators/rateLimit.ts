@@ -7,7 +7,7 @@ import { MIDDLEWARE_METADATA_KEY } from './controller';
  * Rate limit decorator - applies rate limiting to route handlers
  */
 export function RateLimit(options: RateLimitOptions) {
-  return function (target: any, propertyKey?: string, descriptor?: PropertyDescriptor) {
+  return function (target: any, propertyKey?: string, _descriptor?: PropertyDescriptor) {
     const middleware = rateLimiter(options);
     
     if (propertyKey) {
